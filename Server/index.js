@@ -4,11 +4,11 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const helmet = require("helmet");
-const morgon = require("morgan");
-const clientRoutes = require("./routes/client.js")
-const generalRoutes = require("./routes/generalRoutes.js")
-const managementRoutes = require("./routes/managementRoutes.js")
-const salesRoutes = require("./routes/salesRoutes.js")
+const morgan = require("morgan");
+const clientRoutes = require("./routes/client");
+const generalRoutes = require("./routes/general");
+const managementRoutes = require("./routes/management");
+const salesRoutes = require("./routes/sales");
 
 // Configurations
 dotenv.config();
@@ -22,7 +22,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 // Routes
-app.use("/client", clientRoutes)
-app.use("/general", generalRoutes)
-app.use("/management", managementRoutes)
-app.use("/sales", salesRoutes)
+app.use("/client", clientRoutes);
+app.use("/general", generalRoutes);
+app.use("/management", managementRoutes);
+app.use("/sales", salesRoutes);
+
+
+
